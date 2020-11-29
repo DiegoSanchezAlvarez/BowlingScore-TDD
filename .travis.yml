@@ -1,9 +1,11 @@
 language: ruby
 rvm:
-- 2.7.2 #version default 
-#- 2.6.6 #mi version
+#- 2.7.2 #version default 
+- 2.6.6 #mi version
 #- 2.6.5 #otra version por si acaso
 #- jruby
 #- truffleruby
 
 #La version que se pone es la que suara el server de travis para ejecutar
+#La version de travis.yml del admin del repositiorio github del equipo que usara
+#travis debe coincidir con su version del Gemfile
