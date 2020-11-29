@@ -11,23 +11,22 @@ class Frame
         return frame_score
     end
 
-    def primerLanzamiento(pins_derrumbados)
-        return roll1.hacer_Tiro(pins_derrumbados)
+    def lanzamiento_Del_Tiro(numero_de_tiro, pins_derrumbados)
+        if numero_de_tiro = 1
+            roll1.hacer_Tiro(pins_derrumbados)
+        end
+        if numero_de_tiro = 2
+            roll2.hacer_Tiro(pins_derrumbados)
+        end
     end
 
-    def obtenerPuntaje_Del_PrimerRoll()
-        return roll1.obtenerPinsDerrumbados()
+    def obtenerPuntaje_Del_Tiro(numero_de_tiro)
+        if numero_de_tiro = 1
+            return roll1.obtenerPinsDerrumbados()
+        end
+        if numero_de_tiro = 2
+            return roll2.obtenerPinsDerrumbados()
+        end
     end
-
-    def segundoLanzamiento(pins_derrumbados)
-        return roll2.hacer_Tiro(pins_derrumbados)
-    end
-
-    def obtenerPuntaje_Del_SegundoRoll()
-        return roll2.obtenerPinsDerrumbados()
-    end
-    #def actualizarFrameScore(nuevo_frameScore)
-    #    frame_score = nuevo_frameScore
-    #end
         
 end

@@ -27,7 +27,7 @@ RSpec.describe Game do
         roll.hacer_Tiro(5)
         expect(roll.obtenerPinsDerrumbados()).to eq(5)
     end
-
+=begin
     it 'debería anotarse el puntaje del primer tiro (5) si se derrumban 5 pinos en ese tiro' do
         frame = Frame.new()
         frame.primerLanzamiento(5)
@@ -45,5 +45,32 @@ RSpec.describe Game do
         frame.segundoLanzamiento(2)
         expect(frame.obtenerPuntaje_Del_SegundoRoll()).to eq(2)
     end
+=end
 
+    #Pruebas comentadas previamente, en forma refactorizada:
+    it 'debería anotarse el puntaje del primer tiro (5) si se derrumban 5 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.lanzamiento_Del_Tiro(1,5)
+        expect(frame.obtenerPuntaje_Del_Tiro(1)).to eq(5)
+    end
+
+    it 'debería anotarse el puntaje del primer tiro (7) si se derrumban 7 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.lanzamiento_Del_Tiro(1,7)
+        expect(frame.obtenerPuntaje_Del_Tiro(1)).to eq(7)
+    end
+
+    it 'debería anotarse el puntaje del segundo tiro (2) si se derrumban 2 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.lanzamiento_Del_Tiro(2,2)
+        expect(frame.obtenerPuntaje_Del_Tiro(2)).to eq(2)
+    end
+
+    #Aqui se refactorizo para no tener codigo duplicado en el 1er y 2do tiro
+    #(algunas pruebas anteriores se comentaron para no refactorizarlas y no perder su escencia y se las volvio a hacer refactorizadas)
+    it 'debería anotarse el puntaje del segundo tiro (3) si se derrumban 3 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.lanzamiento_Del_Tiro(2,3)
+        expect(frame.obtenerPuntaje_Del_Tiro(2)).to eq(3)
+    end
 end
