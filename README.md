@@ -1,5 +1,10 @@
 ![](https://github.com/kleer-la/template2_6_5/workflows/Ruby/badge.svg)
 
+### Forma de llamar al reporte de travis: [![Build Status](LinkDeLaImagenDelReporteDeTravis)](LinkDelRepositorioDesdeTravis)
+
+#[![Build Status](https://travis-ci.com/DiegoSanchezAlvarez/BowlingScore-TDD.svg?branch=main)](https://travis-ci.com/github/DiegoSanchezAlvarez/BowlingScore-TDD)
+
+
 para ver el reporte de analisis de codigo:
 
 https://kleer-la.github.io/template2_6_5/overview.html#
