@@ -1,4 +1,5 @@
 require 'game'
+require 'frame'
 require 'roll'
 # 1 Hacer prueba que falle y que falle por lo que yo quiera que falle.
 # 2 Hacer que la prueba pase.
@@ -10,7 +11,7 @@ RSpec.describe Game do
         @juego = Game.new()
         #@marcador = ScoreBoard.new()
     }
-    # --- Estas primeras pruebas fueron utiles pero debido a refactorizacion en el codigo, ya no funcionaran correctamente---
+    # --- Estas primeras pruebas fueron cambiando un poco debido a refactorizacion en el codigo---
 
    
     it 'debería devolver un "score" = 0 al iniciar partida' do #Este es el score total que se ira actualizando
@@ -22,8 +23,20 @@ RSpec.describe Game do
     end
 
     it 'debería poder hacer un tiro (roll) que derrumbe 5 pinos y devolver cuantos pinos (pins) se tumbaron' do
-        roll = Roll.new(5)
+        roll = Roll.new()
+        roll.hacer_Tiro(5)
         expect(roll.obtenerPinsDerrumbados()).to eq(5)
     end
 
+    it 'debería anotarse el puntaje del primer tiro (5) si se derrumban 5 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.primerLanzamiento(5)
+        expect(frame.obtenerPuntaje_Del_PrimerRoll()).to eq(5)
+    end
+
+    it 'debería anotarse el puntaje del primer tiro (7) si se derrumban 7 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.primerLanzamiento(7)
+        expect(frame.obtenerPuntaje_Del_PrimerRoll()).to eq(7)
+    end
 end

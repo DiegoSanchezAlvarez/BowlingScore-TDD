@@ -1,5 +1,5 @@
 require_relative 'frame.rb'
-require_relative 'roll.rb'
+
 
 class Game
     attr_accessor :score #Tambien podria directamente usar @score en todo lado

@@ -1,6 +1,10 @@
 class Roll
     attr_accessor :pins
-    def initialize(pins_derrumbados)
+    def initialize()
+        self.pins = 0
+    end
+
+    def hacer_Tiro(pins_derrumbados)
         self.pins = pins_derrumbados
     end
 
