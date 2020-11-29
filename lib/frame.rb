@@ -1,3 +1,4 @@
+
 class Frame
     attr_accessor :frame_score
     def initialize()
