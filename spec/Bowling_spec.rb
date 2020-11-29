@@ -1,5 +1,4 @@
 require 'game'
-require 'marcador'
 # 1 Hacer prueba que falle y que falle por lo que yo quiera que falle.
 # 2 Hacer que la prueba pase.
 # 3 Refactorizar codigo de produccion(modelo) y de las pruebas(Rspec).
