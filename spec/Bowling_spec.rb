@@ -39,4 +39,11 @@ RSpec.describe Game do
         frame.primerLanzamiento(7)
         expect(frame.obtenerPuntaje_Del_PrimerRoll()).to eq(7)
     end
+
+    it 'debería anotarse el puntaje del segundo tiro (2) si se derrumban 2 pinos en ese tiro' do
+        frame = Frame.new()
+        frame.segundoLanzamiento(2)
+        expect(frame.obtenerPuntaje_Del_SegundoRoll()).to eq(2)
+    end
+
 end
