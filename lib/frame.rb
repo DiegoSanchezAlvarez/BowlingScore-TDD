@@ -20,6 +20,14 @@ class Frame
         end
     end
 
+    def lanzamiento_Del_Primer_Tiro(pins_derrumbados)
+        roll1.hacer_Tiro(pins_derrumbados)
+    end
+
+    def lanzamiento_Del_Segundo_Tiro(pins_derrumbados)
+        roll2.hacer_Tiro(pins_derrumbados)
+    end
+
     def obtenerPuntaje_Del_Tiro(numero_de_tiro)
         if numero_de_tiro = 1
             return roll1.obtenerPinsDerrumbados()
@@ -28,5 +36,16 @@ class Frame
             return roll2.obtenerPinsDerrumbados()
         end
     end
+
+    def obtener_EstadoDeLanzamiento_PrimerTiro()
+        return roll1.obtener_EstadoDeLanzamiento()
+    end
+
+    def obtener_EstadoDeLanzamiento_SegundoTiro()
+        return roll2.obtener_EstadoDeLanzamiento()
+    end
+    
+    def obtenerPuntaje_Del_Frame()
         
+    end
 end
