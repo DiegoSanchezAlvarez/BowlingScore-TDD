@@ -1,0 +1,20 @@
+<style>
+body {
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.dZXQw1lmB9pu-2MxTULzcwHaHb%26pid%3DApi&f=1');
+}
+</style> 
+
+<h1>Marcador del Juego: </h1>
+
+
+<h1> Score Frame #1: <%=@score_frame%></h1>
+
+<h1> Score Primer Tiro Frame #1: <%=@roll1%></h1>
+<form method="post" action="/tiro1">
+    <input type="submit" value="Lanzar Tiro #1">
+</form>
+
+<h1> Score Segundo Tiro Frame #1: <%=@roll2%></h1>
+<form method="post" action="/tiro2">
+    <input type="submit" value="Lanzar Tiro #2">
+</form>
