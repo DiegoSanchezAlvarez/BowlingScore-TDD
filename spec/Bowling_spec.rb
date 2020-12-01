@@ -51,25 +51,27 @@ RSpec.describe Game do
 
     #Pruebas comentadas previamente, en forma refactorizada:
     it 'debería anotarse el puntaje del primer tiro (5) si se derrumban 5 pinos en ese tiro' do
-        @frame.lanzamiento_Del_Tiro(1,5)
-        expect(@frame.obtenerPuntaje_Del_Tiro(1)).to eq(5)
+        @frame.lanzamiento_Del_Primer_Tiro(5)
+        expect(@frame.obtenerPuntaje_Del_Primer_Tiro()).to eq(5)
     end
 
     it 'debería anotarse el puntaje del primer tiro (7) si se derrumban 7 pinos en ese tiro' do
-        @frame.lanzamiento_Del_Tiro(1,7)
-        expect(@frame.obtenerPuntaje_Del_Tiro(1)).to eq(7)
+        @frame.lanzamiento_Del_Primer_Tiro(7)
+        expect(@frame.obtenerPuntaje_Del_Primer_Tiro()).to eq(7)
     end
 
     it 'debería anotarse el puntaje del segundo tiro (2) si se derrumban 2 pinos en ese tiro' do
-        @frame.lanzamiento_Del_Tiro(2,2)
-        expect(@frame.obtenerPuntaje_Del_Tiro(2)).to eq(2)
+        @frame.lanzamiento_Del_Primer_Tiro(1)#El seguno tiro requiere del primer tiro
+        @frame.lanzamiento_Del_Segundo_Tiro(2)
+        expect(@frame.obtenerPuntaje_Del_Segundo_Tiro()).to eq(2)
     end
 
     #Aqui se refactorizo para no tener codigo duplicado en el 1er y 2do tiro
     #(algunas pruebas anteriores se comentaron para no refactorizarlas y no perder su escencia y se las volvio a hacer refactorizadas)
     it 'debería anotarse el puntaje del segundo tiro (3) si se derrumban 3 pinos en ese tiro' do
-        @frame.lanzamiento_Del_Tiro(2,3)
-        expect(@frame.obtenerPuntaje_Del_Tiro(2)).to eq(3)
+        @frame.lanzamiento_Del_Primer_Tiro(1)#El seguno tiro requiere del primer tiro
+        @frame.lanzamiento_Del_Segundo_Tiro(3)
+        expect(@frame.obtenerPuntaje_Del_Segundo_Tiro()).to eq(3)
     end
         #Hasta qui ya esta la estructura basica de un frame con su puntaje total y sus puntajes del tiro1 y tiro2
     #Falta calcular el puntaje de un frame apartir de los tiros 1 y 2
@@ -82,13 +84,22 @@ RSpec.describe Game do
     end
 
     it 'debería marcarse como "True" el primer tiro o roll cuando ya fue realizado' do
-        @frame.lanzamiento_Del_Tiro(1,3)
+        @frame.lanzamiento_Del_Primer_Tiro(3)
         expect(@frame.obtener_EstadoDeLanzamiento_PrimerTiro()).to eq(TRUE)
     end
 
     it 'debería marcarse como "True" el segundo tiro o roll cuando ya fue realizado' do
-        @frame.lanzamiento_Del_Tiro(2,3)
+        @frame.lanzamiento_Del_Primer_Tiro(1)#El seguno tiro requiere del primer tiro
+        @frame.lanzamiento_Del_Segundo_Tiro(3)
         expect(@frame.obtener_EstadoDeLanzamiento_SegundoTiro()).to eq(TRUE)
+    end
+
+    #En esta prueba se refactorizo el metodo para hacer lanzamientos para un frame y se refactorizaron las pruebas tambien.
+    it 'debería anotarse un score total de 7 en un frame, si el primer tiro es = 2 y el segundo es = 5 ' do
+        frame = Frame.new()
+        frame.lanzamiento_Del_Primer_Tiro(2)
+        frame.lanzamiento_Del_Segundo_Tiro(5)
+        expect(frame.obtenerPuntaje_Del_Frame()).to eq(7)
     end
 
 
