@@ -101,6 +101,5 @@ RSpec.describe Game do
         frame.lanzamiento_Del_Segundo_Tiro(5)
         expect(frame.obtenerPuntaje_Del_Frame()).to eq(7)
     end
-
-
+    
 end
